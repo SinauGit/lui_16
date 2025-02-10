@@ -62,15 +62,15 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="col-3 offset-1">
+                    <div class="col-2 offset-1">
                         <div class="row">
                             <table width="100%">
                                 <tr style="font-size:17px;">
-                                    <td style="background-color:green; padding: 2px;">
+                                    <td style="background-color:green; padding-top:2px;">
                                         <strong>
-                                            <div style="color: white; text-align: center; white-space: nowrap; overflow: visible;">
-                                                No : <t t-esc="s.name"/>
-                                            </div>
+                                            <center style="vertical-align: baseline; color: white;">
+                                        No : <t t-esc="s.name"/>
+                                            </center>
                                         </strong>
                                     </td>
                                 </tr>
