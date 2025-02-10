@@ -296,22 +296,22 @@
             <div class="rows">
                 <table width="100%" style="border-collapse: collapse;">
                     <tr>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="8%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="4%">
                             <center>No</center>
                         </td>
                         <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="18%">
                             <center>Part Number</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="38%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="36%">
                             <center>Description</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="8%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="4%">
                             <center>Qty</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="15%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="20%">
                             <center>Price / Unit</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="15%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="20%">
                             <center>Total Price</center>
                         </td>
                     </tr>
@@ -324,12 +324,12 @@
                                     <t t-esc="no" />
                                 </center>
                             </td>
-                            <td class="br align-center">
+                            <td class="br text-start">
                                 <center>
                                     <t t-esc="line.product_id.default_code" />
                                 </center>
                             </td>
-                            <td class="br align-center">
+                            <td class="br text-start">
                                 <center>
                                     <t t-esc="line.name" />
                                 </center>
