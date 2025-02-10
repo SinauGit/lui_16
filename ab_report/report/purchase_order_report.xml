@@ -66,8 +66,8 @@
                         <div class="row">
                             <table width="100%">
                                 <tr style="font-size:17px;">
-                                <td style="background-color:green; padding: 5px 10px; white-space: nowrap;">
-                                    <strong style="color: white;">
+                                <td style="background-color:green; padding: 5px 10px; white-space: nowrap; min-width: 150px; max-width: 100%;">
+                                    <strong style="color: white; display: inline-block; text-align: center;">
                                         No : <t t-esc="s.name"/>
                                     </strong>
                                 </td>
