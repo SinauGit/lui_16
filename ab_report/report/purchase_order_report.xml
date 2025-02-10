@@ -325,14 +325,10 @@
                                 </center>
                             </td>
                             <td class="br" style="text-align: left;">
-                                <center>
                                     <t t-esc="line.product_id.default_code" />
-                                </center>
                             </td>
                             <td class="br" style="text-align: left;">
-                                <center>
                                     <t t-esc="line.name" />
-                                </center>
                             </td>
                             <td class="br align-center">
                                 <center>
