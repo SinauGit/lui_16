@@ -229,7 +229,7 @@
                         </tr>
                         <tr>
                             <td style="font-size: 11px; border: 1px solid black; height: 15px;text-align:center">
-                                <t t-esc="o.invoice_line_ids.mapped('sale_line_ids.order_id.client_order_ref')[0] if o.invoice_line_ids.mapped('sale_line_ids.order_id.client_order_ref') else ''"/>
+                                Base on Quot: # <t t-esc="o.invoice_line_ids.mapped('sale_line_ids.order_id.client_order_ref')[0] if o.invoice_line_ids.mapped('sale_line_ids.order_id.client_order_ref') else ''"/>
                             </td>
                             <td style="font-size: 11px; border: 1px solid black; height: 15px;text-align:center">
                                 <t t-esc="o.invoice_line_ids.mapped('sale_line_ids.order_id.user_id.name')[0] if o.invoice_line_ids.mapped('sale_line_ids.order_id.user_id.name') else ''"/>
@@ -299,23 +299,23 @@
                         <t t-foreach="o.invoice_line_ids.filtered(lambda line: line.display_type == 'product')" t-as="l">
                             <t t-set="no" t-value="no+1"/>
                             <tr>
-                                <td style="font-size: 11px; border: 1px solid black;text-align:center">
+                                <td style="font-size: 11px; border: 1px solid black;text-align:center" width="6%">
                                     <t style="font-size: 11px;" t-esc="no"/>
                                 </td>
-                                <td style="font-size: 11px; border: 1px solid black" width="15%">
+                                <td style="font-size: 11px; border: 1px solid black" width="14%">
                                     <t style="font-size: 11px;" t-esc="l.product_id.default_code"/>
                                 </td>
-                                <td style="font-size: 11px; border: 1px solid black" width="50%">
-                                    <t style="font-size: 11px;" t-esc="l.name"/>
+                                <td style="font-size: 11px; border: 1px solid black" width="40%">
+                                    <strong style="font-size: 11px;"><t t-esc="so_line.name"/></strong>
                                 </td>
-                                <td style="font-size: 11px; border: 1px solid black;text-align:center">
+                                <td style="font-size: 11px; border: 1px solid black;text-align:center" width="6%">
                                     <t style="font-size: 11px;" t-esc="int(l.quantity)"/>
                                 </td>
-                                <td style="font-size: 11px; border: 1px solid black;text-align:right">
+                                <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17%">
                                     <t t-esc="o.currency_id.symbol"/>
                                     <t style="font-size: 11px;" t-esc="'{:,}'.format(int(l.price_unit))"/>
                                 </td>
-                                <td style="font-size: 11px; border: 1px solid black;text-align:right">
+                                <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17%">
                                     <t t-esc="o.currency_id.symbol"/>
                                     <t style="font-size: 11px;" t-esc="'{:,}'.format(int(l.price_subtotal))"/>
                                 </td>
@@ -456,7 +456,7 @@
                             </style>
                             <table class="table-notes">
                                 <tr>
-                                    <td style="font-size: 10px;">Notes and Terms</td>
+                                    <td style="font-size: 10px;">Notes and Terms :</td>
                                 </tr>
                                 <tr>
                                     <td style="font-size: 10px;">* Payment by cheque should be crossed and made payable to "PT.LINTANG UTAMA INFOTEK".</td>
@@ -484,26 +484,26 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="height: 80px;">
+                                    <td style="height: 110px;">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="font-size: 11px; text-align:center">
-                                        ( Derry Sofyan )
+                                        ( Dery Annur Sofyan )
                                     </td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <td style="font-size: 11px; text-align:center">
                                         <t t-esc="o.env.company.director_id.name"/>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </table>
                         </td>
                     </tr>
                 </table>
                 <table style="width:100%;" class="table-borderless text-center">
                     <tr>
-                        <td style="text-align:center">
+                        <td style="text-align:center font-size: 12px;">
                             <strong>Thank you for your bussiness !</strong>
                         </td>
                     </tr>
@@ -511,15 +511,15 @@
                 <hr color="black"/>
                 <table width="60%" class="table-borderless">
                     <tr>
-                        <td style="font-size: 11px;">White</td>
-                        <td style="font-size: 11px;"> : </td>
-                        <td style="font-size: 11px;">fn-Customer, </td>
-                        <td style="font-size: 11px;">Red</td>
-                        <td style="font-size: 11px;"> : </td>
-                        <td style="font-size: 11px;">Accounting, </td>
-                        <td style="font-size: 11px;">Yellow</td>
-                        <td style="font-size: 11px;"> : </td>
-                        <td style="font-size: 11px;">Marketing Adm</td>
+                        <td style="font-size: 7px;">White</td>
+                        <td style="font-size: 7px;"> : </td>
+                        <td style="font-size: 7px;">fn-Customer, </td>
+                        <td style="font-size: 7px;">Red</td>
+                        <td style="font-size: 7px;"> : </td>
+                        <td style="font-size: 7px;">Accounting, </td>
+                        <td style="font-size: 7px;">Yellow</td>
+                        <td style="font-size: 7px;"> : </td>
+                        <td style="font-size: 7px;">Marketing Adm</td>
                     </tr>
                 </table>
             </t>
