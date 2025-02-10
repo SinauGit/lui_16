@@ -62,7 +62,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="col-4">
+                    <div class="col-3 offset-1">
                         <div class="row">
                             <table width="100%">
                                 <tr style="font-size:17px;">
