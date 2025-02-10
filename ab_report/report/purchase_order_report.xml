@@ -62,22 +62,21 @@
                             </tr>
                         </table>
                     </div>
-                        <div class="col-3 offset-1">  <!-- Lebar kolom diperlebar -->
-                            <div class="row">
-                                <table width="100%">
-                                    <tr style="font-size:15px;">  <!-- Ukuran font dikurangi -->
-                                        <td style="background-color:green; padding-top:2px; white-space: nowrap;">  <!-- white-space: nowrap -->
-                                            <strong>
-                                                <center style="vertical-align: baseline; color: white;">
-                                                    No : <t t-esc="s.name"/>
-                                                </center>
-                                            </strong>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
+                    <div class="col-2 offset-1">
+                        <div class="row">
+                            <table width="100%">
+                                <tr style="font-size:17px;">
+                                    <td style="background-color:green; padding-top:2px; width: 200px;">
+                                        <strong>
+                                            <center style="vertical-align: baseline; color: white;">
+                                        No : <t t-esc="s.name"/>
+                                            </center>
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
-
+                    </div>
                 </div>
                 <div class="row mt-1">
                     <center>
