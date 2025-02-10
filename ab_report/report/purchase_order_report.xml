@@ -324,12 +324,12 @@
                                     <t t-esc="no" />
                                 </center>
                             </td>
-                            <td class="br align-center">
+                            <td class="br text-start">
                                 <center>
                                     <t t-esc="line.product_id.default_code" />
                                 </center>
                             </td>
-                            <td class="br align-center">
+                            <td class="br text-start">
                                 <center>
                                     <t t-esc="line.name" />
                                 </center>

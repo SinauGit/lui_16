@@ -8,7 +8,7 @@
                     <div class="col-1">
                         <img t-if="s.env.company.logo" t-att-src="image_data_uri(s.env.company.logo)" width="150%"/>
                     </div>
-                    <div class="col-8">
+                    <div class="col-11">
                         <table style="margin-left: 40px;" class="table-borderless">
                             <tr>
                                 <td colspan="3">
@@ -60,22 +60,20 @@
                                     <t t-esc="s.company_id.vat"/>
                                 </td>
                             </tr>
+                            <tr style="font-size: 15px;">
+                                <td width="15%">
+                                    <span>No</span>
+                                </td>
+                                <td width="5%"> : </td>
+                                <td width="80%" style="background-color:green;">
+                                    <strong>
+                                        <span style="color: white;">
+                                            <t t-esc="s.name"/>
+                                        </span>
+                                    </strong>
+                                </td>
+                            </tr>
                         </table>
-                    </div>
-                    <div class="col-2 offset-1">
-                        <div class="row">
-                            <table width="100%">
-                                <tr style="font-size:17px;">
-                                    <td style="background-color:green; padding-top:2px;">
-                                        <strong>
-                                            <center style="vertical-align: baseline; color: white;">
-                                        No : <t t-esc="s.name"/>
-                                            </center>
-                                        </strong>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
                     </div>
                 </div>
                 <div class="row mt-1">
@@ -324,12 +322,12 @@
                                     <t t-esc="no" />
                                 </center>
                             </td>
-                            <td class="br align-center">
+                            <td class="br text-start">
                                 <center>
                                     <t t-esc="line.product_id.default_code" />
                                 </center>
                             </td>
-                            <td class="br align-center">
+                            <td class="br text-start">
                                 <center>
                                     <t t-esc="line.name" />
                                 </center>
