@@ -526,17 +526,17 @@
                     </tr>
                 </table>
                 <hr color="black"/>
-                <table width="60%" class="table-borderless" style="border: 2px solid black;">
+                <table width="60%" class="table-borderless">
                     <tr>
-                        <td style="font-size: 7px;">White</td>
-                        <td style="font-size: 7px;"> : </td>
-                        <td style="font-size: 7px;">fn-Customer, </td>
-                        <td style="font-size: 7px;">Red</td>
-                        <td style="font-size: 7px;"> : </td>
-                        <td style="font-size: 7px;">Accounting, </td>
-                        <td style="font-size: 7px;">Yellow</td>
-                        <td style="font-size: 7px;"> : </td>
-                        <td style="font-size: 7px;">Marketing Adm</td>
+                        <td style="font-size: 11px;">White</td>
+                        <td style="font-size: 11px;"> : </td>
+                        <td style="font-size: 11px;">fn-Customer, </td>
+                        <td style="font-size: 11px;">Red</td>
+                        <td style="font-size: 11px;"> : </td>
+                        <td style="font-size: 11px;">Accounting, </td>
+                        <td style="font-size: 11px;">Yellow</td>
+                        <td style="font-size: 11px;"> : </td>
+                        <td style="font-size: 11px;">Marketing Adm</td>
                     </tr>
                 </table>
             </t>
