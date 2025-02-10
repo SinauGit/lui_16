@@ -68,9 +68,10 @@
                                 <tr style="font-size:17px;">
                                     <td style="background-color:green; padding-top:2px;">
                                         <strong>
-                                            <center style="vertical-align: baseline; color: white;">
-                                        No : <t t-esc="s.name"/>
-                                            </center>
+                                            <span style="color: white; display: flex; align-items: center; justify-content: center;">
+                                                <span>No :</span>
+                                                <span style="margin-left: 5px;"><t t-esc="s.name"/></span>
+                                            </span>
                                         </strong>
                                     </td>
                                 </tr>
@@ -324,15 +325,11 @@
                                     <t t-esc="no" />
                                 </center>
                             </td>
-                            <td class="br" style="text-align: left;">
-                                <center>
-                                    <t t-esc="line.product_id.default_code" />
-                                </center>
+                            <td class="br" style="text-align: left; padding-left: 5px;">
+                                <t t-esc="line.product_id.default_code" />
                             </td>
-                            <td class="br" style="text-align: left;">
-                                <center>
-                                    <t t-esc="line.name" />
-                                </center>
+                            <td class="br" style="text-align: left; padding-left: 5px;">
+                                <t t-esc="line.name" />
                             </td>
                             <td class="br align-center">
                                 <center>
