@@ -302,16 +302,16 @@
                         <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="18%">
                             <center>Part Number</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="36%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="38%">
                             <center>Description</center>
                         </td>
                         <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="4%">
                             <center>Qty</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="20%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="19%">
                             <center>Price / Unit</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="20%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="19%">
                             <center>Total Price</center>
                         </td>
                     </tr>
@@ -324,12 +324,12 @@
                                     <t t-esc="no" />
                                 </center>
                             </td>
-                            <td class="br text-start">
+                            <td class="br align-center">
                                 <center>
                                     <t t-esc="line.product_id.default_code" />
                                 </center>
                             </td>
-                            <td class="br text-start">
+                            <td class="br align-center">
                                 <center>
                                     <t t-esc="line.name" />
                                 </center>
