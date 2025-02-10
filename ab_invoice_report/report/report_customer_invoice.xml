@@ -253,7 +253,7 @@
                             </td>
                         </tr>
                     </table>
-                    <table class="table-borderless table-sm" width="100%">
+                    able class="table-borderless table-sm" width="100%">
                         <tr>
                             <td style="border: 1px solid black;vertical-align:middle" rowspan="2">
                                 <center style="font-size: 11px;">
@@ -300,29 +300,29 @@
                             <t t-if="so_line.product_id.default_code">
                                 <t t-set="no" t-value="no + 1"/>
                                 <tr>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:center">
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:center" width="6">
                                         <t style="font-size: 11px;" t-esc="no"/>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black" width="15%">
+                                    <td style="font-size: 11px; border: 1px solid black" width="14%">
                                         <t style="font-size: 11px;" t-esc="so_line.product_id.default_code"/>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black" width="50%">
+                                    <td style="font-size: 11px; border: 1px solid black" width="40%">
                                         <t t-if="no == 1">
-                                            <t style="font-size: 11px;" t-esc="o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].name"/>
+                                            <strong style="font-size: 11px;" t-esc="o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].name"/></strong>
                                         </t>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:center">
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:center" width="6">
                                         <t t-if="no == 1">
                                             <t style="font-size: 11px;" t-esc="int(o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].quantity)"/>
                                         </t>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:right">
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17">
                                         <t t-if="no == 1">
                                             <t t-esc="o.currency_id.symbol"/>
                                             <t style="font-size: 11px;" t-esc="'{:,}'.format(int(o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].price_unit))"/>
                                         </t>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:right">
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17">
                                         <t t-if="no == 1">
                                             <t t-esc="o.currency_id.symbol"/>
                                             <t style="font-size: 11px;" t-esc="'{:,}'.format(int(o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].price_subtotal))"/>
@@ -518,7 +518,7 @@
                         </td>
                     </tr>
                 </table>
-                <hr color="black"/>
+                <hr style="border: 2px solid black;"/>
                 <table width="60%" class="table-borderless">
                     <tr>
                         <td style="font-size: 11px;">White</td>
