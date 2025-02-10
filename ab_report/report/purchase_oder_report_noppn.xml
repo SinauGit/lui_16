@@ -402,6 +402,7 @@
                             <center style="color: white;">Term Of Payment</center>
                         </td>
                     <tr>
+                    <tr>
                         <td class="br" style="height: 80px;">
                             <t t-esc="s.notes"/>
                         </td>
