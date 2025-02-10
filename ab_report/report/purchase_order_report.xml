@@ -64,15 +64,16 @@
                     </div>
                     <div class="col-2 offset-1">
                         <div class="row">
-                            <table width="100%">
-                                <tr style="font-size:14px;">
+                        <table width="100%" style="table-layout: fixed;">
+                            <tr style="font-size:17px;">
                                 <td style="background-color:green; padding: 5px 10px; white-space: nowrap;">
-                                    <strong style="color: white;">
+                                    <strong style="color: white; display: block; text-align: center;">
                                         No : <t t-esc="s.name"/>
                                     </strong>
                                 </td>
-                                </tr>
-                            </table>
+                            </tr>
+                        </table>
+
                         </div>
                     </div>
                 </div>
