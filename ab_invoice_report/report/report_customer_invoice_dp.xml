@@ -519,7 +519,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <hr style="border: 2px solid black;"/>
+                        <hr color="black" style="border: 2px solid black;"/>
                         <table width="60%" class="table-borderless">
                             <tr>
                                 <td style="font-size: 11px;">White</td>

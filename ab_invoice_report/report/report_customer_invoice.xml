@@ -487,12 +487,12 @@
                 </table>
                 <table style="width:100%;" class="table-borderless text-center">
                     <tr>
-                        <td style="text-align:center">
+                        <td style="text-align:center; font-size: 15px;">
                             <strong>Thank you for your bussiness !</strong>
                         </td>
                     </tr>
                 </table>
-                <hr color="black"/>
+                <hr color="black" style="border: 2px solid black;"/>
                 <table width="60%" class="table-borderless">
                     <tr>
                         <td style="font-size: 11px;">White</td>
