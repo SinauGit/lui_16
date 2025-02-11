@@ -360,9 +360,9 @@
                                             <strong>
                                                 <t t-esc="o.partner_bank_id.acc_holder_name"/>
                                             </strong>
-                                            <td>
-                                                <br/>
-                                            </td>
+                                        </td>
+                                        <td>
+                                            <br/>
                                         </td>
                                     </tr>
                                     <tr>
