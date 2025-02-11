@@ -288,7 +288,7 @@
                             </td>
                         </tr>
                         <t t-set="no" t-value="0"/>
-                        <t t-foreach="o.invoice_line_ids" t-as="l">
+                        <!-- <t t-foreach="o.invoice_line_ids" t-as="l"> -->
                         <t t-foreach="o.invoice_line_ids.filtered(lambda line: line.display_type == 'product')" t-as="l">
                             <t t-set="no" t-value="no+1"/>
                             <tr>
