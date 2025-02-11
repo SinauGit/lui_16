@@ -158,14 +158,13 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <tr>
-                                            <td style="font-size: 11px; width:25%;height:10%;border-left: 1px solid black;border-bottom: 1px solid black; padding-left:5px;">NPWP</td>
-                                            <td style="font-size: 11px; width:5%;border-bottom: 1px solid black">:</td>
-                                            <td style="font-size: 11px; width:70%;border-right: 1px solid black;border-bottom: 1px solid black">
-                                                <t t-esc="o.partner_id.vat"/>
-                                            </td>
-                                        </tr>
-                                    </table>
+                                        <td style="font-size: 11px; width:25%;height:10%;border-left: 1px solid black;border-bottom: 1px solid black; padding-left:5px;">NPWP</td>
+                                        <td style="font-size: 11px; width:5%;border-bottom: 1px solid black">:</td>
+                                        <td style="font-size: 11px; width:70%;border-right: 1px solid black;border-bottom: 1px solid black">
+                                            <t t-esc="o.partner_id.vat"/>
+                                        </td>
+                                    </tr>
+                                </table>
                                 </td>
                                 <td width="7%"></td>
                                 <td width="50%">
