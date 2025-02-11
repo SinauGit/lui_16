@@ -289,7 +289,7 @@
                                 <t t-set="no" t-value="no + 1"/>
                                 <tr>
                                     <td style="font-size: 11px; border: 1px solid black;text-align:center">
-                                        <t style="font-size: 11px;" t-esc="no" width="5">/>
+                                        <t style="font-size: 11px;" t-esc="no" width="5">
                                     </td>
                                     <td style="font-size: 11px; border: 1px solid black" width="15%">
                                         <t style="font-size: 11px;" t-esc="so_line.product_id.default_code"/>
@@ -299,7 +299,7 @@
                                             <t style="font-size: 11px;" t-esc="o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].name"/>
                                         </t>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:center" width="5">>
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:center" >
                                         <t t-if="no == 1">
                                             <t style="font-size: 11px;" t-esc="int(o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].quantity)"/>
                                         </t>
