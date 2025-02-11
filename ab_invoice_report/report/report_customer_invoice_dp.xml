@@ -321,7 +321,7 @@
                                     <td style="font-size: 11px; border: 1px solid black" width="14%">
                                         <t style="font-size: 11px;" t-esc="so_line.product_id.default_code"/>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black" width="42%">
+                                    <td style="font-size: 11px; border: 1px solid black; font-weight: bold;" width="42%">
                                         <strong>
                                             <t t-esc="so_line.name"/>
                                         </strong>
@@ -448,6 +448,16 @@
                                 </td>
                             </tr>
                         </table>
+                        <div style="width:100%">
+                            <table class="table-borderless">
+                                <tr>
+                                    <td>
+                                        <br/>
+                                        <br/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                         <table style="left: 0; width: 100%" class="table-borderless">
                             <tr>
                                 <td width="80%">
@@ -504,7 +514,7 @@
                         </table>
                         <table style="width:100%;" class="table-borderless text-center">
                             <tr>
-                                <td style="text-align:center; font-size: 12px;">
+                                <td style="text-align:center; font-size: 15px;">
                                     <strong>Thank you for your bussiness !</strong>
                                 </td>
                             </tr>
@@ -512,15 +522,15 @@
                         <hr style="border: 2px solid black;"/>
                         <table width="60%" class="table-borderless">
                             <tr>
-                                <td style="font-size: 7px;">White</td>
-                                <td style="font-size: 7px;"> : </td>
-                                <td style="font-size: 7px;">fn-Customer, </td>
-                                <td style="font-size: 7px;">Red</td>
-                                <td style="font-size: 7px;"> : </td>
-                                <td style="font-size: 7px;">Accounting, </td>
-                                <td style="font-size: 7px;">Yellow</td>
-                                <td style="font-size: 7px;"> : </td>
-                                <td style="font-size: 7px;">Marketing Adm</td>
+                                <td style="font-size: 11px;">White</td>
+                                <td style="font-size: 11px;"> : </td>
+                                <td style="font-size: 11px;">fn-Customer, </td>
+                                <td style="font-size: 11px;">Red</td>
+                                <td style="font-size: 11px;"> : </td>
+                                <td style="font-size: 11px;">Accounting, </td>
+                                <td style="font-size: 11px;">Yellow</td>
+                                <td style="font-size: 11px;"> : </td>
+                                <td style="font-size: 11px;">Marketing Adm</td>
                             </tr>
                         </table>
                     </div>
