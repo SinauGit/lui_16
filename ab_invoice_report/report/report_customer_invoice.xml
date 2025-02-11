@@ -253,7 +253,7 @@
                             </td>
                         </tr>
                     </table>
-                    able class="table-borderless table-sm" width="100%">
+                    <table class="table-borderless table-sm" width="100%">
                         <tr>
                             <td style="border: 1px solid black;vertical-align:middle" rowspan="2">
                                 <center style="font-size: 11px;">
@@ -306,9 +306,9 @@
                                     <td style="font-size: 11px; border: 1px solid black" width="14%">
                                         <t style="font-size: 11px;" t-esc="so_line.product_id.default_code"/>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black" width="40%">
+                                    <td style="font-size: 11px; border: 1px solid black; font-weight: bold;" width="40%">
                                         <t t-if="no == 1">
-                                            <t style="font-size: 11px;" t-esc="o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].name"/>
+                                            <t t-esc="o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].name"/>
                                         </t>
                                     </td>
                                     <td style="font-size: 11px; border: 1px solid black;text-align:center" width="6">
