@@ -33,17 +33,17 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="font-size: 8x;">
+                                            <td>
                                                 <t t-esc="o.company_id.partner_id.street" />
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="font-size: 8px;">>
+                                            <td>
                                                 <t t-esc="o.company_id.partner_id.street2" />
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="font-size: 8px;">>
+                                            <td>
                                                 <t t-esc="o.company_id.partner_id.city" />
                                                 <t t-if="o.company_id.partner_id.state_id">
                                                     <t t-esc="' - ' + o.company_id.partner_id.state_id.name" />
@@ -52,13 +52,13 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="font-size: 8x;">
+                                            <td>
                                             NPWP :
                                                 <t t-esc="o.company_id.partner_id.vat"/>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="font-size: 8x;">
+                                            <td>
                                             Ph. :
                                                 <t t-esc="o.company_id.partner_id.phone"/>
                                             </td>
@@ -79,7 +79,7 @@
                                             <td style="font-size: 11px; width:25%">Date</td>
                                             <td style="font-size: 11px; width:5%">:</td>
                                             <td style="font-size: 11px; width:70%">
-                                                <t t-esc="o.date.strftime('%d %B %Y')"/>
+                                                <t t-esc="o.date"/>
                                             </td>
                                             <td>
                                                 <br/>
@@ -120,7 +120,7 @@
                             <td width="50%">
                                 <table style="width:100%;height:70px;">
                                     <tr style="background-color:#d9d9d9">
-                                        <td class="doble-table" style="width:25%;height:10%;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black; font-size: 11px; padding-left:5px;"><strong>Bill To</strong></td>
+                                        <td class="doble-table" style="width:25%;height:10%;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black; font-size: 11px; padding-left:5px;">Bill To</td>
                                         <td style="width:5%;border-top: 1px solid black;border-bottom: 1px solid black; font-size: 11px;">:</td>
                                         <td style="width:70%;border-top: 1px solid black;border-bottom: 1px solid black;border-right: 1px solid black; font-size: 11px;">
         
@@ -158,10 +158,6 @@
                                                 ,
                                                     <t t-esc="o.partner_id.zip"/>
                                                 </t>
-                                                <br></br>
-                                                <t t-if="o.partner_id.country_id">
-                                                    <t t-esc="o.partner_id.country_id.name"/>
-                                                </t>
                                             </t>
                                         </td>
                                     </tr>
@@ -178,7 +174,7 @@
                             <td width="50%">
                                 <table style="width:100%;height:70px">
                                     <tr style="background-color:#d9d9d9;">
-                                        <td class="doble-table" style="font-size: 11px; width:25%;height:10%;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black; padding-left:5px;"><strong>Ship To</strong></td>
+                                        <td class="doble-table" style="font-size: 11px; width:25%;height:10%;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black; padding-left:5px;">Ship To</td>
                                         <td style="font-size: 11px; width:5%;border-top: 1px solid black;border-bottom: 1px solid black">:</td>
                                         <td style="font-size: 11px; width:70%;border-top: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black">
                  
@@ -229,7 +225,7 @@
                         </tr>
                         <tr>
                             <td style="font-size: 11px; border: 1px solid black; height: 15px;text-align:center">
-                                Base on Quot: # <t t-esc="o.invoice_line_ids.mapped('sale_line_ids.order_id.client_order_ref')[0] if o.invoice_line_ids.mapped('sale_line_ids.order_id.client_order_ref') else ''"/>
+                                <t t-esc="o.invoice_line_ids.mapped('sale_line_ids.order_id.client_order_ref')[0] if o.invoice_line_ids.mapped('sale_line_ids.order_id.client_order_ref') else ''"/>
                             </td>
                             <td style="font-size: 11px; border: 1px solid black; height: 15px;text-align:center">
                                 <t t-esc="o.invoice_line_ids.mapped('sale_line_ids.order_id.user_id.name')[0] if o.invoice_line_ids.mapped('sale_line_ids.order_id.user_id.name') else ''"/>
@@ -237,7 +233,7 @@
                             <td style="font-size: 11px; border: 1px solid black; height: 15px;text-align:center">
                                 <t t-set="do" t-value="o.invoice_line_ids.mapped('sale_line_ids').mapped('order_id').mapped('picking_ids').filtered(lambda x: x.state != 'cancel')"/>
                                 <t t-if="do">
-                                    <t t-esc="do.scheduled_date.strftime('%d %B %Y')"/>
+                                    <t t-esc="do.scheduled_date"/>
                                 </t>
 
                                 <!-- <t t-esc="o.invoice_line_ids.mapped('move_id')[0] if o.invoice_line_ids.mapped('move_id') else ''"/> -->
@@ -249,7 +245,7 @@
                                 </t>
                             </td>
                             <td style="font-size: 11px; border: 1px solid black; height: 15px;text-align:center">
-                                <t t-esc="o.invoice_date_due.strftime('%d %B %Y')"/>
+                                <t t-esc="o.invoice_date_due"/>
                             </td>
                         </tr>
                     </table>
@@ -300,29 +296,29 @@
                             <t t-if="so_line.product_id.default_code">
                                 <t t-set="no" t-value="no + 1"/>
                                 <tr>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:center" width="6">
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:center">
                                         <t style="font-size: 11px;" t-esc="no"/>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black" width="14%">
+                                    <td style="font-size: 11px; border: 1px solid black" width="15%">
                                         <t style="font-size: 11px;" t-esc="so_line.product_id.default_code"/>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black" width="40%">
+                                    <td style="font-size: 11px; border: 1px solid black" width="50%">
                                         <t t-if="no == 1">
                                             <t style="font-size: 11px;" t-esc="o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].name"/>
                                         </t>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:center" width="6">
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:center">
                                         <t t-if="no == 1">
                                             <t style="font-size: 11px;" t-esc="int(o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].quantity)"/>
                                         </t>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17">
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:right">
                                         <t t-if="no == 1">
                                             <t t-esc="o.currency_id.symbol"/>
                                             <t style="font-size: 11px;" t-esc="'{:,}'.format(int(o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].price_unit))"/>
                                         </t>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17">
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:right">
                                         <t t-if="no == 1">
                                             <t t-esc="o.currency_id.symbol"/>
                                             <t style="font-size: 11px;" t-esc="'{:,}'.format(int(o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].price_subtotal))"/>
@@ -373,7 +369,7 @@
                                             <br/>
                                         </td>
                                     </tr>
-                                   <tr>
+                                    <tr>
                                         <td style="font-size: 11px;">A/C: <t t-esc="o.partner_bank_id.acc_number"/>
  (                                        <t t-esc="o.partner_bank_id.currency_id.name"/>
 )</td>
@@ -461,27 +457,16 @@
                             <style>
                                 .table-notes, .table-notes td {
                                     padding : 1px;
-                                    font-size: 8px;
                                 }
                             </style>
                             <table class="table-notes">
                                 <tr>
-                                    <td style="font-size: 10px;">Notes and Terms :</td>
+                                    <td style="font-size: 10px;">Notes and Terms</td>
                                 </tr>
                                 <tr>
-                                    <td style="font-size: 10px; padding-top: 5px;">* Payment by cheque should be crossed and made payable to "PT.LINTANG UTAMA INFOTEK".</td>
-                                </tr>
-                                <tr>
-                                    <td style="font-size: 10px; padding-top: 5px;">* Penalty at the rate of 3% per month will be charged on overdue account.</td>
-                                </tr>
-                                <tr>
-                                    <td style="font-size: 10px; padding-top: 5px;">* For each customer data change request in invoice, ( Name, NPWP &amp; Address ) -</td>
-                                </tr>
-                                <tr>
-                                    <td style="font-size: 10px; padding-top: 5px;"> can only be served within maximum period of 1(one) month from receipt of invoice</td>
-                                </tr>
-                                <tr>
-                                    <td style="font-size: 10px; padding-top: 5px;"> and attach a copy of NPWP referred to</td>
+                                    <td style="font-size: 10px;">
+                                        <t t-esc="o.narration"/>
+                                    </td>
                                 </tr>
                             </table>
                         </td>
@@ -489,36 +474,34 @@
                         <td width="40%">
                             <table class="d-flex align-items-center justify-content-center">
                                 <tr>
-                                    <td style="font-size: 11px; text-align:center">
-                                        Hormat Kami,
+                                    <td style="font-size: 11px; text-align:center">Hormat Kami,</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="height: 110px;">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="font-size: 11px; text-align:center">
-                                        ( Dery Annur Sofyan )
-                                    </td>
-                                </tr>
-                                <!-- <tr>
                                     <td style="font-size: 11px; text-align:center">
                                         <t t-esc="o.env.company.director_id.name"/>
                                     </td>
-                                </tr> -->
+                                </tr>
                             </table>
                         </td>
                     </tr>
                 </table>
                 <table style="width:100%;" class="table-borderless text-center">
                     <tr>
-                        <td style="text-align:center font-size: 12px;">
+                        <td style="text-align:center">
                             <strong>Thank you for your bussiness !</strong>
                         </td>
                     </tr>
                 </table>
-                <hr style="border: 2px solid black;"/>
+                <hr color="black"/>
                 <table width="60%" class="table-borderless">
                     <tr>
                         <td style="font-size: 11px;">White</td>
