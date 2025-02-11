@@ -301,7 +301,7 @@
                                     </td>
                                     <td style="font-size: 11px; border: 1px solid black" width="42%">
                                         <t t-if="no == 1">
-                                            <t style="font-size: 11px; font-weight: bold;" t-esc="o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].name"/>
+                                            <t style="font-size: 11px;" t-esc="o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].name"/>
                                         </t>
                                     </td>
                                     <td style="font-size: 11px; border: 1px solid black;text-align:center" width="4">
