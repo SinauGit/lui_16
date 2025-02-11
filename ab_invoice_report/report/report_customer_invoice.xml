@@ -373,8 +373,10 @@
                                             <br/>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td style="font-size: 11px;">A/C: <t t-esc="o.partner_bank_id.acc_number"/>(<t t-esc="o.partner_bank_id.currency_id.name"/>)</td>
+                                   <tr>
+                                        <td style="font-size: 11px;">A/C: <t t-esc="o.partner_bank_id.acc_number"/>
+ (                                        <t t-esc="o.partner_bank_id.currency_id.name"/>
+)</td>
                                     <td>
                                         <br/>
                                     </td>
