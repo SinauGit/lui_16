@@ -45,9 +45,6 @@
                                         <tr>
                                             <td>
                                                 <t t-esc="o.company_id.partner_id.city" />
-                                                <!-- <t t-if="o.company_id.partner_id.state_id">
-                                                    <t t-esc="' - ' + o.company_id.partner_id.state_id.name" />
-                                                </t> -->
                                                 <t t-esc="' ' + o.company_id.partner_id.zip" />
                                             </td>
                                         </tr>
@@ -149,11 +146,6 @@
                                                     <t t-esc="o.partner_id.street2"/>
                                                     <br></br>
                                                 </t>
-                                                <t t-esc="o.partner_id.city"/>
-                                                <!-- <t t-if="o.partner_id.state_id">
-                                                ,
-                                                    <t t-esc="o.partner_id.state_id.name"/>
-                                                </t> -->
                                                 <t t-if="o.partner_id.zip">
                                                 ,
                                                     <t t-esc="o.partner_id.zip"/>
@@ -174,7 +166,7 @@
                             <td width="50%">
                                 <table style="width:100%;height:70px">
                                     <tr style="background-color:#d9d9d9;">
-                                        <td class="doble-table" style="font-size: 11px; width:25%;height:10%;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black; padding-left:5px;"><strong>Bill To</strong></td>
+                                        <td class="doble-table" style="font-size: 11px; width:25%;height:10%;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black; padding-left:5px;"><strong>Ship To</strong></td>
                                         <td style="font-size: 11px; width:5%;border-top: 1px solid black;border-bottom: 1px solid black">:</td>
                                         <td style="font-size: 11px; width:70%;border-top: 1px solid black;border-right: 1px solid black;border-bottom: 1px solid black">
                  
@@ -297,7 +289,7 @@
                                 <t t-set="no" t-value="no + 1"/>
                                 <tr>
                                     <td style="font-size: 11px; border: 1px solid black;text-align:center">
-                                        <t style="font-size: 11px;" t-esc="no"/>
+                                        <t style="font-size: 11px;" t-esc="no" width="5">/>
                                     </td>
                                     <td style="font-size: 11px; border: 1px solid black" width="15%">
                                         <t style="font-size: 11px;" t-esc="so_line.product_id.default_code"/>
@@ -307,7 +299,7 @@
                                             <t style="font-size: 11px;" t-esc="o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].name"/>
                                         </t>
                                     </td>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:center">
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:center" width="5">>
                                         <t t-if="no == 1">
                                             <t style="font-size: 11px;" t-esc="int(o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].quantity)"/>
                                         </t>
