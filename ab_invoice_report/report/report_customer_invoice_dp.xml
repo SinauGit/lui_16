@@ -122,15 +122,15 @@
                 
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td style="font-size: 11px; width:25%;height:10%;border-left: 1px solid black;"></td>
-                                            <td style="font-size: 11px; width:5%;"></td>
-                                            <td style="font-size: 11px; width:70%;border-right: 1px solid black;">
-                                                <strong>
-                                                    <t t-esc="o.partner_id.name_get()[0][1]"/>
-                                                </strong>
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td style="font-size: 11px; width:25%;height:10%;border-left: 1px solid black;"></td>
+                                        <td style="font-size: 11px; width:5%;"></td>
+                                        <td style="font-size: 11px; width:70%;border-right: 1px solid black;">
+                                            <strong>
+                                                <t t-esc="o.partner_id.name_get()[0][1]"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td style="font-size: 11px; width:25%;height:80%;border-left: 1px solid black; padding-left:5px;">Address</td>
                                         <td style="font-size: 11px; width:5%">:</td>
