@@ -452,7 +452,6 @@
                                     <style>
                                         .table-notes, .table-notes td {
                                             padding : 1px;
-                                            font-size: 8px;
                                         }
                                     </style>
                                     <table class="table-notes">
@@ -460,19 +459,19 @@
                                             <td style="font-size: 10px;">Notes and Terms :</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-size: 10px; padding-top: 5px;">* Payment by cheque should be crossed and made payable to "PT.LINTANG UTAMA INFOTEK".</td>
+                                            <td style="font-size: 10px; padding-top: 1px;">* Payment by cheque should be crossed and made payable to "PT.LINTANG UTAMA INFOTEK".</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-size: 10px; padding-top: 5px;">* Penalty at the rate of 3% per month will be charged on overdue account.</td>
+                                            <td style="font-size: 10px; padding-top: 1px;">* Penalty at the rate of 3% per month will be charged on overdue account.</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-size: 10px; padding-top: 5px;">* For each customer data change request in invoice, ( Name, NPWP &amp; Address ) -</td>
+                                            <td style="font-size: 10px; padding-top: 1px;">* For each customer data change request in invoice, ( Name, NPWP &amp; Address ) -</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-size: 10px; padding-top: 5px;"> can only be served within maximum period of 1(one) month from receipt of invoice</td>
+                                            <td style="font-size: 10px; padding-top: 1px;"> can only be served within maximum period of 1(one) month from receipt of invoice</td>
                                         </tr>
                                         <tr>
-                                            <td style="font-size: 10px; padding-top: 5px;"> and attach a copy of NPWP referred to</td>
+                                            <td style="font-size: 10px; padding-top: 1px;"> and attach a copy of NPWP referred to</td>
                                         </tr>
                                     </table>
                                 </td>

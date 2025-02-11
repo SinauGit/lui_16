@@ -299,7 +299,7 @@
                                     <t style="font-size: 11px;" t-esc="l.product_id.default_code"/>
                                 </td>
                                 <td style="font-size: 11px; border: 1px solid black" width="42%">
-                                    <t style="font-size: 11px;" t-esc="l.name"/>
+                                    <strong style="font-size: 11px;" t-esc="l.name"/></strong>
                                 </td>
                                 <td style="font-size: 11px; border: 1px solid black;text-align:center" width="4">
                                     <t style="font-size: 11px;" t-esc="int(l.quantity)"/>
@@ -459,24 +459,25 @@
                         </td>
                         <td class="10%"></td>
                         <td width="40%">
-                            <table class="d-flex align-items-center justify-content-center">
+                             <table class="d-flex align-items-center justify-content-center">
                                 <tr>
-                                    <td style="font-size: 11px; text-align:center">Hormat Kami,</td>
+                                    <td style="font-size: 11px; text-align:center">
+                                        Hormat Kami,
+                                    </td>
+                                 </tr>
+                                <tr>
+                                    <td style="height: 110px;"></td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <br/>
-                                        <br/>
-                                        <br/>
-                                        <br/>
-                                        <br/>
+                                 <tr>
+                                       <td style="font-size: 11px; text-align:center">
+                                        ( Dery Annur Sofyan )
                                     </td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <td style="font-size: 11px; text-align:center">
                                         <t t-esc="o.env.company.director_id.name"/>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </table>
                         </td>
                     </tr>
