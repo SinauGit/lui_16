@@ -322,7 +322,9 @@
                                         <t style="font-size: 11px;" t-esc="so_line.product_id.default_code"/>
                                     </td>
                                     <td style="font-size: 11px; border: 1px solid black" width="42%">
-                                        <strong style="font-size: 11px;"><t t-esc="so_line.name"/></strong>
+                                        <strong>
+                                            <t t-esc="so_line.name"/>
+                                        </strong>
                                     </td>
                                     <td style="font-size: 11px; border: 1px solid black;text-align:center" width="4">
                                         <t style="font-size: 11px;" t-esc="int(so_line.product_uom_qty)"/>
