@@ -288,41 +288,31 @@
                             </td>
                         </tr>
                         <t t-set="no" t-value="0"/>
-                        <t t-set="so_lines" t-value="o.invoice_line_ids.mapped('sale_line_ids.order_id.order_line').filtered(lambda l: l.product_id)"/>
-                        <t t-foreach="so_lines" t-as="so_line">
-                            <t t-if="so_line.product_id.default_code">
-                                <t t-set="no" t-value="no + 1"/>
-                                <tr>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:center" width="4">
-                                        <t style="font-size: 11px;" t-esc="no"/>
-                                    </td>
-                                    <td style="font-size: 11px; border: 1px solid black" width="14%">
-                                        <t style="font-size: 11px;" t-esc="so_line.product_id.default_code"/>
-                                    </td>
-                                    <td style="font-size: 11px; border: 1px solid black" width="42%">
-                                        <t t-if="no == 1">
-                                            <t style="font-size: 11px;" t-esc="o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].name"/>
-                                        </t>
-                                    </td>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:center" width="4">
-                                        <t t-if="no == 1">
-                                            <t style="font-size: 11px;" t-esc="int(o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].quantity)"/>
-                                        </t>
-                                    </td>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17">
-                                        <t t-if="no == 1">
-                                            <t t-esc="o.currency_id.symbol"/>
-                                            <t style="font-size: 11px;" t-esc="'{:,}'.format(int(o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].price_unit))"/>
-                                        </t>
-                                    </td>
-                                    <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17">
-                                        <t t-if="no == 1">
-                                            <t t-esc="o.currency_id.symbol"/>
-                                            <t style="font-size: 11px;" t-esc="'{:,}'.format(int(o.invoice_line_ids.filtered(lambda l: l.display_type == 'product')[0].price_subtotal))"/>
-                                        </t>
-                                    </td>
-                                </tr>
-                            </t>
+                        <!-- <t t-foreach="o.invoice_line_ids" t-as="l"> -->
+                        <t t-foreach="o.invoice_line_ids.filtered(lambda line: line.display_type == 'product')" t-as="l">
+                            <t t-set="no" t-value="no+1"/>
+                            <tr>
+                                <td style="font-size: 11px; border: 1px solid black;text-align:center" width="4">
+                                    <t style="font-size: 11px;" t-esc="no"/>
+                                </td>
+                                <td style="font-size: 11px; border: 1px solid black" width="14">
+                                    <t style="font-size: 11px;" t-esc="l.product_id.default_code"/>
+                                </td>
+                                <td style="font-size: 11px; border: 1px solid black" width="42%">
+                                    <t style="font-size: 11px;" t-esc="l.name"/>
+                                </td>
+                                <td style="font-size: 11px; border: 1px solid black;text-align:center" width="4">
+                                    <t style="font-size: 11px;" t-esc="int(l.quantity)"/>
+                                </td>
+                                <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17">
+                                    <t t-esc="o.currency_id.symbol"/>
+                                    <t style="font-size: 11px;" t-esc="'{:,}'.format(int(l.price_unit))"/>
+                                </td>
+                                <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17">
+                                    <t t-esc="o.currency_id.symbol"/>
+                                    <t style="font-size: 11px;" t-esc="'{:,}'.format(int(l.price_subtotal))"/>
+                                </td>
+                            </tr>
                         </t>
                     </table>
                     <table style="left:0; width:100%" class="subtotal-table table-borderless">
