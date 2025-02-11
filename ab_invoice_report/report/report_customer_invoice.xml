@@ -298,8 +298,10 @@
                                 <td style="font-size: 11px; border: 1px solid black" width="14">
                                     <t style="font-size: 11px;" t-esc="l.product_id.default_code"/>
                                 </td>
-                                <td style="font-size: 11px; border: 1px solid black" width="42%">
-                                    <t t-esc="l.name" style="font-size: 11px; font-weight: bold;"/>
+                                <td style="font-size: 11px; border: 1px solid black; font-weight: bold;" width="42%">
+                                    <strong>
+                                        <t t-esc="l.name"/>
+                                    </strong>
                                 </td>
 
                                 <td style="font-size: 11px; border: 1px solid black;text-align:center" width="4">
