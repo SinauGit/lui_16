@@ -308,10 +308,10 @@
                         <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="4%">
                             <center>Qty</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="17%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="19%">
                             <center>Price / Unit</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="23%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="21%">
                             <center>Total Price</center>
                         </td>
                     </tr>

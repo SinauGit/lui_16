@@ -308,10 +308,10 @@
                         <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="4%">
                             <center>Qty</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="17%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="19%">
                             <center>Price / Unit</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="23%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="21%">
                             <center>Total Price</center>
                         </td>
                     </tr>
@@ -409,10 +409,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="br" style="height: 80px;">
+                        <td class="br" style="height: 80px; text-align: left; vertical-align: top;">
                             <t t-esc="s.notes"/>
                         </td>
-                        <td class="br" style="height: 80px;">
+                        <td class="br" style="height: 80px; text-align: center; vertical-align: middle;">
                             <t t-esc="s.payment_term_id.name"/>
                         </td>
                     </tr>
@@ -420,7 +420,6 @@
             </div>
             <br>
             </br>
-
             </div>
         </template>
 
