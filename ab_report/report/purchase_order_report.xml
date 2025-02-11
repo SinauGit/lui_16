@@ -299,19 +299,19 @@
                         <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="4%">
                             <center>No</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="18%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="16%">
                             <center>Part Number</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="38%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="36%">
                             <center>Description</center>
                         </td>
                         <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="4%">
                             <center>Qty</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="19%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="17%">
                             <center>Price / Unit</center>
                         </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="19%">
+                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="23%">
                             <center>Total Price</center>
                         </td>
                     </tr>
