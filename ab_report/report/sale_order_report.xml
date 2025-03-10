@@ -102,21 +102,22 @@
 
 
     <template id="so_footer" name="so_footer">
-        <div class="text-center">
-            <div style='width: 100%; border-style: solid; border-width: 1px;margin-bottom:5px;'/>
-            <t t-if="o">
-                <t t-esc="o.user_id.email"/>
-            </t>
-            <t t-esc="company.website"/>
-            <div style='width: 100%; border-style: solid; border-width: 1px;margin-top:5px;'/>
-            <div t-if="report_type == 'pdf'" class="text-muted">
+            <div class="text-center">
+                <div style="width: 100%; border-style: solid; border-width: 1px; margin-bottom: 5px;"/>
+                <t t-if="o">
+                    <t t-esc="o.user_id.email"/> - 
+                    <t t-esc="o.user_id.phone"/> - 
+                    <t t-esc="company.website"/>
+                </t>
+                <div style="width: 100%; border-style: solid; border-width: 1px; margin-top: 5px;"/>
+                <div t-if="report_type == 'pdf'" class="text-muted">
                     Page:
-                <span class="page"/>
+                    <span class="page"/>
                     of
-                <span class="topage"/>
+                    <span class="topage"/>
+                </div>
             </div>
-        </div>
-    </template>
+        </template>
 
     <template id="custom_layout_report" inherit_id="web.external_layout_standard">
         <xpath expr="//div[1]" position="replace">
