@@ -37,7 +37,7 @@
         <field name="orientation">Portrait</field>
         <field name="page_width">210</field>
         <field name="page_height">297</field>
-        <field name="margin_top">5</field>
+        <field name="margin_top">10</field>
         <field name="margin_bottom">5</field>
         <field name="margin_left">7</field>
         <field name="margin_right">7</field>
@@ -55,12 +55,12 @@
     <field name="page_width">210</field> <!-- Sesuaikan dengan lebar kertas F4 dalam satuan piksel -->
     <field name="orientation">Portrait</field>
     <field name="margin_top">10</field>
-    <field name="margin_bottom">10</field>
-    <field name="margin_left">10</field>
-    <field name="margin_right">10</field>
+    <field name="margin_bottom">5</field>
+    <field name="margin_left">7</field>
+    <field name="margin_right">7</field>
     <field name="header_line" eval="False"/>
-    <field name="header_spacing">5</field>
-    <field name="dpi">90</field> <!-- Sesuaikan DPI sesuai kebutuhan -->
+    <field name="header_spacing">20</field>
+    <field name="dpi">80</field> <!-- Sesuaikan DPI sesuai kebutuhan -->
     </record>
 
     <!-- <record id="report_paperformat_a4_portrait_inv" model="report.paperformat">
@@ -89,7 +89,7 @@
         <field name="print_report_name">'INV - %s' % object.name</field>
         <field name="binding_model_id" ref="account.model_account_move"/>
         <field name="binding_type">report</field>
-        <field name="paperformat_id" ref="ab_invoice_report.paperformat_a4_portrait" />
+        <field name="paperformat_id" ref="ab_invoice_report.report_paperformat_f4_portrait" />
     </record>
 
     <record id="report_invoice_action_dp" model="ir.actions.report">
@@ -101,7 +101,7 @@
         <field name="print_report_name">'INV - %s' % object.name</field>
         <field name="binding_model_id" ref="account.model_account_move"/>
         <field name="binding_type">report</field>
-        <field name="paperformat_id" ref="ab_invoice_report.paperformat_a4_portrait" />
+        <field name="paperformat_id" ref="ab_invoice_report.report_paperformat_f4_portrait" />
     </record>
 
 </odoo>

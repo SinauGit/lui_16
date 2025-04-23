@@ -162,7 +162,7 @@
                                         <td style="font-size: 11px; width:25%;height:10%;border-left: 1px solid black;border-bottom: 1px solid black; padding-left:5px;">NPWP</td>
                                         <td style="font-size: 11px; width:5%;border-bottom: 1px solid black">:</td>
                                         <td style="font-size: 11px; width:70%;border-right: 1px solid black;border-bottom: 1px solid black">
-                                            <t t-esc="o.partner_id.vat"/>
+                                            <t t-esc="o.partner_id.vat_custom"/>
                                         </td>
                                     </tr>
                                 </table>
@@ -268,6 +268,11 @@
                                     <span>Qty</span>
                                 </center>
                             </td>
+                            <td style="border: 1px solid black;vertical-align:middle" rowspan="2">
+                                <center style="font-size: 11px;">
+                                    <span>UoM</span>
+                                </center>
+                            </td>
                             <td style="border: 1px solid black">
                                 <center style="font-size: 11px;">
                                     <span style="vertical-align: baseline;">Price per Unit</span>
@@ -288,34 +293,54 @@
                             </td>
                         </tr>
                         <t t-set="no" t-value="0"/>
-                        <!-- <t t-foreach="o.invoice_line_ids" t-as="l"> -->
-                        <t t-foreach="o.invoice_line_ids.filtered(lambda line: line.display_type == 'product')" t-as="l">
-                            <t t-set="no" t-value="no+1"/>
-                            <tr>
-                                <td style="font-size: 11px; border: 1px solid black;text-align:center" width="4">
-                                    <t style="font-size: 11px;" t-esc="no"/>
-                                </td>
-                                <td style="font-size: 11px; border: 1px solid black" width="14">
-                                    <t style="font-size: 11px;" t-esc="l.product_id.default_code"/>
-                                </td>
-                                <td style="font-size: 11px; border: 1px solid black; font-weight: bold;" width="42%">
-                                    <strong>
-                                        <t t-esc="l.name"/>
-                                    </strong>
-                                </td>
-
-                                <td style="font-size: 11px; border: 1px solid black;text-align:center" width="4">
-                                    <t style="font-size: 11px;" t-esc="int(l.quantity)"/>
-                                </td>
-                                <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17">
-                                    <t t-esc="o.currency_id.symbol"/>
-                                    <t style="font-size: 11px;" t-esc="'{:,}'.format(int(l.price_unit))"/>
-                                </td>
-                                <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17">
-                                    <t t-esc="o.currency_id.symbol"/>
-                                    <t style="font-size: 11px;" t-esc="'{:,}'.format(int(l.price_subtotal))"/>
-                                </td>
-                            </tr>
+                        <!-- Loop semua invoice line dengan urutan asli -->
+                        <t t-foreach="o.invoice_line_ids" t-as="line">
+                            <!-- Baris produk -->
+                            <t t-if="line.display_type == 'product'">
+                                <t t-set="no" t-value="no+1"/>
+                                <tr>
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:center" width="4">
+                                        <t style="font-size: 11px;" t-esc="no"/>
+                                    </td>
+                                    <td style="font-size: 11px; border: 1px solid black" width="14">
+                                        <t style="font-size: 11px;" t-esc="line.product_id.default_code"/>
+                                    </td>
+                                    <td style="font-size: 11px; border: 1px solid black; font-weight: bold;" width="42%">
+                                        <strong>
+                                            <t t-esc="line.name"/>
+                                        </strong>
+                                    </td>
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:center" width="2">
+                                        <t style="font-size: 11px;" t-esc="int(line.quantity)"/>
+                                    </td>
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:center" width="2">
+                                        <t t-if="line.product_uom_id">
+                                            <t t-esc="line.product_uom_id.name"/>
+                                        </t>
+                                    </td>
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17">
+                                        <t t-esc="o.currency_id.symbol"/>
+                                        <t style="font-size: 11px;" t-esc="'{:,}'.format(int(line.price_unit))"/>
+                                    </td>
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:right" width="17">
+                                        <t t-esc="o.currency_id.symbol"/>
+                                        <t style="font-size: 11px;" t-esc="'{:,}'.format(int(line.price_subtotal))"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            
+                            <!-- Baris note -->
+                            <t t-if="line.display_type == 'line_note'">
+                                <tr>
+                                    <td style="font-size: 11px; border: 1px solid black;text-align:center" width="4">
+                                    </td>
+                                    <td style="font-size: 11px; border: 1px solid black" width="14">
+                                    </td>
+                                    <td colspan="5" style="font-size: 11px; border: 1px solid black; font-style: italic;" width="42%">
+                                        <t t-esc="line.name"/>
+                                    </td>
+                                </tr>
+                            </t>
                         </t>
                     </table>
                     <table style="left:0; width:100%" class="subtotal-table table-borderless">
