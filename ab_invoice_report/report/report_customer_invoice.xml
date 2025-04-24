@@ -120,20 +120,19 @@
                                         <td class="doble-table" style="width:25%;height:10%;border-top: 1px solid black;border-left: 1px solid black;border-bottom: 1px solid black; font-size: 11px; padding-left:5px;"><strong>Bill To</strong></td>
                                         <td style="width:5%;border-top: 1px solid black;border-bottom: 1px solid black; font-size: 11px;">:</td>
                                         <td style="width:70%;border-top: 1px solid black;border-bottom: 1px solid black;border-right: 1px solid black; font-size: 11px;">
-        
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-size: 11px; width:25%;height:10%;border-left: 1px solid black;"></td>
-                                        <td style="font-size: 11px; width:5%;"></td>
-                                        <td style="font-size: 11px; width:70%;border-right: 1px solid black;">
                                             <strong>
                                                 <t t-esc="o.partner_id.name_get()[0][1]"/>
                                             </strong>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="font-size: 11px; width:25%;height:80%;border-left: 1px solid black; padding-left:5px;">Address</td>
+                                        <td style="font-size: 11px; width:25%;height:10%;border-left: 1px solid black;"></td>
+                                        <td style="font-size: 11px; width:5%;"></td>
+                                        <td style="font-size: 11px; width:70%;border-right: 1px solid black;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 11px; width:25%;height:80%;border-left: 1px solid black; padding-left:5px; padding-top:5px;">Address</td>
                                         <td style="font-size: 11px; width:5%">:</td>
                                         <td style="font-size: 11px; width:70%;border-right: 1px solid black">
                                             <t t-if="o.partner_id">
@@ -159,9 +158,9 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="font-size: 11px; width:25%;height:10%;border-left: 1px solid black;border-bottom: 1px solid black; padding-left:5px;">NPWP</td>
-                                        <td style="font-size: 11px; width:5%;border-bottom: 1px solid black">:</td>
-                                        <td style="font-size: 11px; width:70%;border-right: 1px solid black;border-bottom: 1px solid black">
+                                        <td style="font-size: 11px; width:25%;height:10%;border-left: 1px solid black;border-bottom: 1px solid black; padding-left:5px; padding-top:5px; padding-bottom:5px;">NPWP</td>
+                                        <td style="font-size: 11px; width:5%;border-bottom: 1px solid black; padding-top:10px; padding-bottom:5px;">:</td>
+                                        <td style="font-size: 11px; width:70%;border-right: 1px solid black;border-bottom: 1px solid black; padding-top:10px; padding-bottom:5px;">
                                             <t t-esc="o.partner_id.vat_custom"/>
                                         </td>
                                     </tr>
