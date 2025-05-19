@@ -16,7 +16,7 @@
         'report/ab_report_actions.xml',
         'report/delivery_order_report.xml',
         'report/purchase_order_report.xml',
-        'report/purchase_oder_report_noppn.xml',
+        'report/purchase_order_report_noppn.xml',
         # 'report/patty_cash.xml',        
         'report/patty_cash_line.xml',        
         'report/sale_order_report.xml',
