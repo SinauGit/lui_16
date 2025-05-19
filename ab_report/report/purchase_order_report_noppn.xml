@@ -295,96 +295,102 @@
 
             <div class="rows">
                 <table width="100%" style="border-collapse: collapse;">
-                    <tr>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="4%">
-                            <center>No</center>
-                        </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="16%">
-                            <center>Part Number</center>
-                        </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="36%">
-                            <center>Description</center>
-                        </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="4%">
-                            <center>Qty</center>
-                        </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="19%">
-                            <center>Price / Unit</center>
-                        </td>
-                        <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="21%">
-                            <center>Total Price</center>
-                        </td>
-                    </tr>
-                    <t t-set="no" t-value="0" />
-                    <t t-foreach="s.order_line" t-as="line">
-                        <t t-set="no" t-value="no+1" />
-                        <tr style="height: 28px;">
-                            <td class="br align-center">
-                                <center>
-                                    <t t-esc="no" />
-                                </center>
+                    <thead>
+                        <tr>
+                            <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="4%">
+                                <center>No</center>
                             </td>
-                            <td class="br" style="padding-left: 5px;">
-                                <t t-esc="line.product_id.default_code" />
+                            <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="16%">
+                                <center>Part Number</center>
                             </td>
-                            <td class="br" style="padding-left: 5px;">
-                                <t t-esc="line.name" />
+                            <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="36%">
+                                <center>Description</center>
                             </td>
-                            <td class="br align-center">
-                                <center>
-                                    <t t-esc="int(line.product_qty)" />
-                                </center>
+                            <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="4%">
+                                <center>Qty</center>
                             </td>
-                            <td class="br align-right pr">
-                                <t t-esc="currency_symbol"/>
-                                <t t-esc="'{:,}'.format(int(line.price_unit))"/>
-
+                            <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="19%">
+                                <center>Price / Unit</center>
                             </td>
-                            <td class="br align-right pr">
-                                <t t-esc="currency_symbol"/>
-                                <t t-esc="'{:,}'.format(int(line.price_subtotal))"/>
+                            <td class="br" style="background-color: #e5e7e9; font-style: italic;" width="21%">
+                                <center>Total Price</center>
                             </td>
                         </tr>
-                    </t>
-                    <tr>
-                        <td colspan="4"></td>
-                        <td class="baseline align-right pr">
-                            <span>Sub Total</span>
-                        </td>
-                        <td class="br baseline align-right pr" style ="width: 30%;">
-                            <t t-esc="currency_symbol"/>
-                            <t t-esc="'{:,}'.format(int(s.amount_untaxed))"/>
-                        </td>
-                    </tr>
-                    <t t-set="tr" t-value="3"/>
-                    <t t-foreach="s.tax_totals.get('groups_by_subtotal').get('Untaxed Amount')" t-as="tax_line">
+                    </thead>
+                    <tbody>
+                        <t t-set="no" t-value="0" />
+                        <t t-foreach="s.order_line" t-as="line">
+                            <t t-set="no" t-value="no+1" />
+                            <tr style="height: 28px;">
+                                <td class="br align-center">
+                                    <center>
+                                        <t t-esc="no" />
+                                    </center>
+                                </td>
+                                <td class="br" style="padding-left: 5px;">
+                                    <t t-esc="line.product_id.default_code" />
+                                </td>
+                                <td class="br" style="padding-left: 5px;">
+                                    <t t-esc="line.name" />
+                                </td>
+                                <td class="br align-center">
+                                    <center>
+                                        <t t-esc="int(line.product_qty)" />
+                                    </center>
+                                </td>
+                                <td class="br align-right pr">
+                                    <t t-esc="currency_symbol"/>
+                                    <t t-esc="'{:,}'.format(int(line.price_unit))"/>
+
+                                </td>
+                                <td class="br align-right pr">
+                                    <t t-esc="currency_symbol"/>
+                                    <t t-esc="'{:,}'.format(int(line.price_subtotal))"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                    <tfoot>
                         <tr>
                             <td colspan="4"></td>
                             <td class="baseline align-right pr">
+                                <span>Sub Total</span>
+                            </td>
+                            <td class="br baseline align-right pr" style ="width: 30%;">
+                                <t t-esc="currency_symbol"/>
+                                <t t-esc="'{:,}'.format(int(s.amount_untaxed))"/>
+                            </td>
+                        </tr>
+                        <t t-set="tr" t-value="3"/>
+                        <t t-foreach="s.tax_totals.get('groups_by_subtotal').get('Untaxed Amount')" t-as="tax_line">
+                            <tr>
+                                <td colspan="4"></td>
+                                <td class="baseline align-right pr">
+                                    <span>
+                                        <t t-esc="tax_line.get('tax_group_name')"/>
+                                    </span>
+                                </td>
+                                <td class="br baseline align-right pr">
+                                    <t t-esc="currency_symbol"/>
+                                    <t t-esc="'{:,}'.format(int(tax_line.get('tax_group_amount')))"/>
+
+                                </td>
+                            </tr>
+                            <t t-set="tr" t-value="tr+1"/>
+                        </t>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td class='baseline align-right pr'>
                                 <span>
-                                    <t t-esc="tax_line.get('tax_group_name')"/>
+                                    <strong>Grand Total</strong>
                                 </span>
                             </td>
                             <td class="br baseline align-right pr">
                                 <t t-esc="currency_symbol"/>
-                                <t t-esc="'{:,}'.format(int(tax_line.get('tax_group_amount')))"/>
-
+                                <t t-esc="'{:,}'.format(int(s.amount_total))"/>
                             </td>
                         </tr>
-                        <t t-set="tr" t-value="tr+1"/>
-                    </t>
-                    <tr>
-                        <td colspan="4"></td>
-                        <td class='baseline align-right pr'>
-                            <span>
-                                <strong>Grand Total</strong>
-                            </span>
-                        </td>
-                        <td class="br baseline align-right pr">
-                            <t t-esc="currency_symbol"/>
-                            <t t-esc="'{:,}'.format(int(s.amount_total))"/>
-                        </td>
-                    </tr>
+                    </tfoot>
                 </table>
             </div>
             <br></br>
@@ -515,6 +521,24 @@
                         }
                         table.align-top, table.align-top tr, table.align-top tr td {
                           vertical-align: top;
+                        }
+                        /* Styling untuk paging */
+                        .page {
+                            page-break-inside: avoid;
+                            padding-top: 10px;
+                        }
+                        table {
+                            page-break-inside: auto;
+                        }
+                        tr {
+                            page-break-inside: avoid;
+                            page-break-after: auto;
+                        }
+                        thead {
+                            display: table-header-group;
+                        }
+                        tfoot {
+                            display: table-footer-group;
                         }
                 </style>
 

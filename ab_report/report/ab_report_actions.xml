@@ -23,7 +23,7 @@
         <field name="print_report_name">'%s' % (object.name)</field>
         <field name="binding_model_id" ref="purchase.model_purchase_order"/>
         <field name="binding_type">report</field>
-        <field name="paperformat_id" ref="base.paperformat_euro"/>
+        <field name="paperformat_id" ref="ab_report.paperformat_purchase_order"/>
     </record>
 
     <record id="action_purchase_order_noppn" model="ir.actions.report">
@@ -35,7 +35,7 @@
         <field name="print_report_name">'%s' % (object.name)</field>
         <field name="binding_model_id" ref="purchase.model_purchase_order"/>
         <field name="binding_type">report</field>
-        <field name="paperformat_id" ref="base.paperformat_euro"/>
+        <field name="paperformat_id" ref="ab_report.paperformat_purchase_order"/>
     </record>
 
      <record id="action_report_patty_cash" model="ir.actions.report">
