@@ -395,7 +395,7 @@
             </div>
             <br></br>
             <div class="rows">
-                <table class="br" width="100%" style="border-collapse: collapse; page-break-inside: avoid;">
+                <table class="br" width="100%" style="border-collapse: collapse; page-break-inside: avoid; page-break-before: auto;">
                     <tr style="background-color: #e5e7e9">
                         <td class="br py" width="50%" style="background-color:green;">
                             <center style="color: white;">Term &amp; Condition</center>
