@@ -78,14 +78,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-1">
-                    <center>
-                        <strong style="font-size: 22px;">
-                                    PURCHASE ORDER
-                        </strong>
-                        <div style='width: 100%; height: 1px; border: 1px solid black;' />
-                    </center>
-                </div>
+                <t t-if="first_page">
+                    <div class="row mt-1">
+                        <center>
+                            <strong style="font-size: 22px;">
+                                        PURCHASE ORDER
+                            </strong>
+                            <div style='width: 100%; height: 1px; border: 1px solid black;' />
+                        </center>
+                    </div>
+                </t>
             </div>
         </template>
 
@@ -405,7 +407,7 @@
             </div>
             <br></br>
             <div class="rows">
-                <table class="br" width="100%" style="border-collapse: collapse;">
+                <table class="br" width="100%" style="border-collapse: collapse; page-break-inside: avoid;">
                     <tr style="background-color: #e5e7e9">
                         <td class="br py" width="50%" style="background-color:green;">
                             <center style="color: white;">Term &amp; Condition</center>
@@ -432,44 +434,46 @@
     <template id="po_footer" name="po_footer">
         <div class="footer">
             <div class="rows">
-                <table class="table-borderless" width="100%">
-                    <tr>
-                        <td style="text-align:center;">
-                            <!-- <u style="margin-left:10%;">Yudhistira</u> -->
-                            <t t-esc="s.user_id.partner_id.name"/>
-                        </td>
-                        <td style="text-align:center;">
-                            <!-- <u style="text-align:center;">Arief R.Aris</u> -->
-                            <!-- <t t-esc="s.approved_by_user_id.partner_id.name"/> -->
-                            <t t-esc="'Imam Tabroni'"/>
-                        </td>
-                        <td style="text-align:center;">
-                            <!-- <u style="margin-left:20%;">D . Annur Sofyan</u> -->
-                            <!-- <t t-esc="s.company_id.director_id.name"/> -->
-                            <t t-esc="'Dery Annur Sofyan'"/>
-                        </td>
-                        <td style="text-align:center;">
-                            <u>
-                                <t t-esc="s.date_approve.strftime('%d-%m-%Y')"/>
-                            </u>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align:center;">
-                            <strong> Purchasing </strong>
-                        </td>
-                        <td style="text-align:center;">
-                            <strong> Finance Manager </strong>
-                        </td>
-                        <td style="text-align:center;">
-                            <strong> Authorized by </strong>
-                        </td>
-                        <td style="text-align:center;">
-                            <strong>Date</strong>
-                        </td>
-                    </tr>
-                </table>
-                <br></br>
+                <t t-if="last_page">
+                    <table class="table-borderless" width="100%">
+                        <tr>
+                            <td style="text-align:center;">
+                                <!-- <u style="margin-left:10%;">Yudhistira</u> -->
+                                <t t-esc="s.user_id.partner_id.name"/>
+                            </td>
+                            <td style="text-align:center;">
+                                <!-- <u style="text-align:center;">Arief R.Aris</u> -->
+                                <!-- <t t-esc="s.approved_by_user_id.partner_id.name"/> -->
+                                <t t-esc="'Imam Tabroni'"/>
+                            </td>
+                            <td style="text-align:center;">
+                                <!-- <u style="margin-left:20%;">D . Annur Sofyan</u> -->
+                                <!-- <t t-esc="s.company_id.director_id.name"/> -->
+                                <t t-esc="'Dery Annur Sofyan'"/>
+                            </td>
+                            <td style="text-align:center;">
+                                <u>
+                                    <t t-esc="s.date_approve.strftime('%d-%m-%Y')"/>
+                                </u>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;">
+                                <strong> Purchasing </strong>
+                            </td>
+                            <td style="text-align:center;">
+                                <strong> Finance Manager </strong>
+                            </td>
+                            <td style="text-align:center;">
+                                <strong> Authorized by </strong>
+                            </td>
+                            <td style="text-align:center;">
+                                <strong>Date</strong>
+                            </td>
+                        </tr>
+                    </table>
+                    <br></br>
+                </t>
                 <span width="95%">
                     <center>
                         <i>
@@ -551,6 +555,8 @@
                         }
                 </style>
 
+                <t t-set="first_page" t-value="True"/>
+                <t t-set="last_page" t-value="True"/>
                 <t t-call="ab_report.po_header"/>
                 <t t-call="ab_report.po_page"/>
                 <t t-call="ab_report.po_footer"/>
